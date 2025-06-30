@@ -1,0 +1,21 @@
+name: Basic System Test
+
+on:
+  workflow_dispatch:  # Manually triggered
+
+jobs:
+  basic-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Say Hello
+        run: echo "👋 Hello from GitHub Actions!"
+
+      - name: Show current date
+        run: date
+
+      - name: Show OS version
+        run: cat /etc/os-release
+
+      - name: Show disk usage
+        run: df -h
