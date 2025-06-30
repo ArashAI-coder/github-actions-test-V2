@@ -1,14 +1,13 @@
 name: Weather Fetch Test
 
 on:
-  workflow_dispatch:   # Manual trigger
+  workflow_dispatch:
 
 jobs:
   fetch-weather:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Get current weather for Brisbane
+      - name: Fetch weather for Brisbane
         run: |
-          echo "📍 Location: Brisbane"
-          curl -s "https://api.open-meteo.com/v1/forecast?latitude=-27.47&longitude=153.03&current=temperature_2m,weathercode&timezone=auto" | jq .
+          echo "📍 Brisbane weather data:"
+          curl -s "https://api.open-meteo.com/v1/forecast?latitude=-27.47&longitude=153.03&current=temperature_2m&timezone=auto"
